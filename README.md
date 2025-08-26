@@ -14,35 +14,7 @@ The script demonstrates how to discover open ports and services.
 - Python 3
 - socket / nmap libraries
 
-## How to Run
-```bash
-python scanner.py <target-ip>
----
 
-## Example Output
-[*] Scanning target: 127.0.0.1
-[+] Port 22 is OPEN (SSH)
-[+] Port 80 is OPEN (HTTP)
-[-] Port 443 is CLOSED
-
-
----
-
-## Code Snippet
-
-```python
-import socket
-
-def scan_port(host, port):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.settimeout(1)
-    try:
-        s.connect((host, port))
-        print(f"[+] Port {port} is OPEN")
-    except:
-        pass
-    s.close()
----
 
 ## Disclaimer
 
@@ -140,4 +112,47 @@ This ensures full protection of user data and prevents unauthorized access.
 
 
 <img width="1194" height="412" alt="image" src="https://github.com/user-attachments/assets/cd6b01a3-fb96-403c-b456-35bd602eca05" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## How to Run
+```bash
+python scanner.py <target-ip>
+---
+
+## Example Output
+[*] Scanning target: 127.0.0.1
+[+] Port 22 is OPEN (SSH)
+[+] Port 80 is OPEN (HTTP)
+[-] Port 443 is CLOSED
+
+
+---
+
+## Code Snippet
+
+```python
+import socket
+
+def scan_port(host, port):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.settimeout(1)
+    try:
+        s.connect((host, port))
+        print(f"[+] Port {port} is OPEN")
+    except:
+        pass
+    s.close()
+---
 
